@@ -15,14 +15,14 @@ SR = int(os.environ.get('SR', '16000'))
 threshold = int(os.environ.get('THRESHOLD', '1000'))
 minus = os.environ.get('MINUS', '0').lower() in ('true', '1', 't')
 plus = os.environ.get('PLUS', '1').lower() in ('true', '1', 't')
-L = int(os.environ.get('L', '1'))
+L = int(os.environ.get('L', '3'))
 
 bits = []
 with open("data/binary/{}_SR{}_threshold{}".format(bn, SR, threshold),"rb") as f:
     for b in f.read():
         bits.append(b)
 
-loaded = np.load("data/npy/{}_SR{}_threshold{}_L{}.npz".format(bn, SR, threshold, L))['arr_0']
+loaded = np.load("data/npy/{}_SR{}_threshold{}_L{}_transformed.npz".format(bn, SR, threshold, L))['arr_0']
 
 '''
 ex.) let `L` be `3`

@@ -12,7 +12,7 @@ SR = int(os.environ.get('SR', '16000'))
 threshold = int(os.environ.get('THRESHOLD', '1000'))
 minus = os.environ.get('MINUS', '0').lower() in ('true', '1', 't')
 plus = os.environ.get('PLUS', '1').lower() in ('true', '1', 't')
-L = int(os.environ.get('L', '1000'))
+L = int(os.environ.get('L', '3'))
 
 
 if not os.path.exists("data/npy"):
