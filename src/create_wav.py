@@ -13,8 +13,6 @@ bn, _ = os.path.splitext(wf)
 
 SR = int(os.environ.get('SR', '16000'))
 threshold = int(os.environ.get('THRESHOLD', '1000'))
-minus = os.environ.get('MINUS', '0').lower() in ('true', '1', 't')
-plus = os.environ.get('PLUS', '1').lower() in ('true', '1', 't')
 L = int(os.environ.get('L', '3'))
 
 bits = []
@@ -43,9 +41,9 @@ y = [0]
 for bit in range(len(bits)):
     S = 0
     for i in range(L):
-        cur = bit-L+i
+        cur = bit-L-1+i
         if cur < 0: continue
-        loaded_cur = loaded[bit-1][i]
+        loaded_cur = loaded[bit][i]
         if bits[cur]:
             S+=loaded_cur
         else:

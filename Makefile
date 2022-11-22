@@ -6,6 +6,7 @@ export PLUS:=1
 export L:=10
 export LR:=0.3
 export EPOCH_NUM:=50
+export TESTFILE:=atr503_a06.wav
 
 setup_data:
 		ls data/wav | xargs -I% python3 src/create_data.py --file %
@@ -17,6 +18,7 @@ train:
 wav:
 		python3 src/create_data.py --file $(TESTFILE)
 		python3 src/create_npy.py --file $(TESTFILE)
+		python3 src/transform_npy.py --file $(TESTFILE)
 		python3 src/create_wav.py --file $(TESTFILE)
 
 clean:
