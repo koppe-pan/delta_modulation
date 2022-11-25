@@ -1,4 +1,8 @@
 # How to run our original method.
+1. Tune the parameters in `Makefile`.
+  - `THRESHOLD` represents the threshold of quantization.
+  - `SR` represents the sampling rate.
+  - `L` represents the length of the learning vector.
 ## Setup before train
 1. place every original wav file into `./data/wav/`.
 1. execute `make setup_data` command.
@@ -11,12 +15,9 @@ make setup_data
 
 ## Train
 1. Tune the parameters in `Makefile`.
-  - `THRESHOLD` represents the threshold of quantization.
-  - `SR` represents the sampling rate.
-  - `L` represents the length of the learning vector.
   - `LR` represents the learning rate of the optimizer.
   - `EPOCH_NUM` represents the iteration counts.
-1. execute `make train` command.
+2. execute `make train` command.
 
 ## Create wav after train
 1. place the original wav file into `./data/wav/`.
